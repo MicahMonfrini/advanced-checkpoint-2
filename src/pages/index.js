@@ -1,5 +1,5 @@
-import React from 'react';
-import Link from 'next/link';
+import React from "react";
+import Link from "next/link";
 
 function IndexPage() {
   return (
@@ -9,6 +9,10 @@ function IndexPage() {
       </h1>
       <Link href="/about">
         <a>About</a>
+      </Link>
+      <br />
+      <Link href="/books">
+        <a>Books</a>
       </Link>
     </div>
   );

@@ -1,8 +1,8 @@
-import next from 'next';
-import path from 'path';
-import express from 'express';
+import next from "next";
+import path from "path";
+import express from "express";
 
-const dev = process.env.NODE_ENV !== 'production';
+const dev = process.env.NODE_ENV !== "production";
 const nextApp = next({
   dev,
   dir: path.resolve(__dirname)
@@ -17,7 +17,7 @@ nextApp.prepare().then(() => {
   // Define all you backend handlers here...
 
   // Handle everything that is not covered in above routes with next.js
-  app.get('*', (request, response) => {
+  app.get("*", (request, response) => {
     return handle(request, response);
   });
 
