@@ -44,6 +44,9 @@ class BooksPage extends Component {
     return (
       <div>
         {bookList}
+        <Link href="/submit">
+          <a>Add New Book</a>
+        </Link>
       </div>
     );
   }

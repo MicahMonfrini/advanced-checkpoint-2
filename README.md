@@ -1,24 +1,24 @@
 ### Setup
-* Create a new repository on github, clone it onto your machine
+<!-- * Create a new repository on github, clone it onto your machine
 * Download (not clone) the files from the repository https://github.com/AustinCodingAcademy/advanced-nextjs-express-starter and copy them into your new project. Make sure all the files are at the top level. So inside of your folder you should have the .eslint, package.json etc on the very top level
 * yarn install, yarn start
 * Don't use this readme to figure out what code to type
 * Use all other projects we have done as code examples
 * Pick a real life thing to use as a model. Vehicle, Product, Movie etc
-* Implement 5 properties for this model.
+* Implement 5 properties for this model. -->
 
 ### React
-* Create a page as a class based component that list out a collection of your models (ListOfUsers)
+<!-- * Create a page as a class based component that list out a collection of your models (ListOfUsers)
     * Use prop types to define what props the component needs
-    * It should probably need a prop named after the plural of your model, and it should probably be an array
-    * Probably want to map over this array and create some divs or li's showing 3 of the properties of the item
+    * It should probably need a prop named after the plural of your model, and it should probably be an array -->
+    <!-- * Probably want to map over this array and create some divs or li's showing 3 of the properties of the item
     * Create a Link on each item so you can navigate to the detail page
-    * Create a button on each item so you can delete the item
-* Create a page with a class based component that makes a new model (redux fetch practice)
+    * Create a button on each item so you can delete the item -->
+<!-- * Create a page with a class based component that makes a new model (redux fetch practice)
     * Create a form and a button
-    * Put a label and an input for each property your model has
-    * Bonus - use a drop down if there are a limited number of values for a property
-    * Register onChange for each input and use setState to store the information typed in
+    * Put a label and an input for each property your model has -->
+    <!-- * Bonus - use a drop down if there are a limited number of values for a property -->
+    <!-- * Register onChange for each input and use setState to store the information typed in -->
     * Register onSubmit for the form.
     * onSubmit call an action called createThing(change it to make sense for your model) Remember to connect this via mapDispatchToProps etc.
 * Create a page with a class based component that shows details of one thing (UserDetail)
