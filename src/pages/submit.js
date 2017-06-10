@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 
-class Submit extends Component {
+class SubmitPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,10 +16,22 @@ class Submit extends Component {
     // added this so next.js wouldn't throw "getInitialProps" error
   }
 
+  mapDispatchToProps() {
+    // need to create/import createBook action
+    return {
+      createBook: dispatch => {
+        dispatch(createBook(book));
+      }
+    };
+  }
+
   render() {
     return (
       <div>
-        <form>
+        <form
+          onSubmit = {() => {
+            this.props.createBook();
+          }}>
           <p>
             Title:
               <input
@@ -85,13 +97,11 @@ class Submit extends Component {
                 }}
               />
           </p>
+           <input type="submit" />
         </form>
-        <button>
-          Submit
-        </button>
       </div>
     );
   }
 }
 
-export default Submit;
+export default SubmitPage;
