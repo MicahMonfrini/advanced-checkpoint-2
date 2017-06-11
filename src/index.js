@@ -1,6 +1,7 @@
 import next from "next";
 import path from "path";
 import express from "express";
+import BookRouter from "./routers/BookRouter";
 
 const dev = process.env.NODE_ENV !== "production";
 const nextApp = next({
@@ -15,6 +16,7 @@ nextApp.prepare().then(() => {
   const app = express();
 
   // Define all you backend handlers here...
+  app.use(BookRouter);
 
   // Handle everything that is not covered in above routes with next.js
   app.get("*", (request, response) => {
