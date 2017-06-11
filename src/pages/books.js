@@ -32,7 +32,7 @@ class BooksPage extends Component {
           <li><strong>Title:</strong> {book.title}</li>
           <li><strong>Author:</strong> {book.author}</li>
           <li><strong>Category:</strong> {book.category}</li>
-          {/* need to configure url to generate unique title for detail page */}
+          {/* @TODO: configure url to generate unique title for detail page */}
           <Link href="/books/:title">
             <a>More info</a>
           </Link>

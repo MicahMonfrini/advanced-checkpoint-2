@@ -19,8 +19,8 @@
     * Put a label and an input for each property your model has -->
     <!-- * Bonus - use a drop down if there are a limited number of values for a property -->
     <!-- * Register onChange for each input and use setState to store the information typed in -->
-    * Register onSubmit for the form.
-    * onSubmit call an action called createThing(change it to make sense for your model) Remember to connect this via mapDispatchToProps etc.
+    <!-- * Register onSubmit for the form.
+    * onSubmit call an action called createThing(change it to make sense for your model) Remember to connect this via mapDispatchToProps etc. -->
 * Create a page with a class based component that shows details of one thing (UserDetail)
     * Use a prop that has the array of your models
     * Use a parameter from the route path ?id=<id> to find the model to show (See Routing section for more details)

@@ -17,7 +17,7 @@ class SubmitPage extends Component {
   }
 
   mapDispatchToProps() {
-    // need to create/import createBook action
+    // @TODO: create/import createBook action
     return {
       createBook: dispatch => {
         dispatch(createBook(book));
