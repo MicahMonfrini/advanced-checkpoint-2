@@ -1,4 +1,5 @@
 import express from "express";
+import BookController from "../controllers/BookController";
 
 const router = express.Router();
 // @FIXME: remove disabling of rules
@@ -6,37 +7,22 @@ const router = express.Router();
 
 // Lists all books
 
-router.get("/api/books", (req, res, next) => {
-  console.log("List view is working");
-  return res.json("Works");
-});
+router.get("/api/books", BookController.list);
 
-// Returns single book
+// Shows single book
 
-router.get("/api/books/:id", (req, res, next) => {
-  console.log("Detail view is working");
-  return res.json("Works");
-});
+router.get("/api/books/:id", BookController.show);
 
-// Adds single book
+// Creates single book
 
-router.post("/api/books/:id", (req, res, next) => {
-  console.log("Post view is working");
-  return res.json("Works");
-});
+router.post("/api/books/:id", BookController.create);
 
 // Deletes single book
 
-router.delete("/api/books/:id", (req, res, next) => {
-  console.log("Delete view is working");
-  return res.json("Works");
-});
+router.delete("/api/books/:id", BookController.delete);
 
 // Updates single book
 
-router.put("/api/books/:id", (req, res, next) => {
-  console.log("Update view is working");
-  return res.json("Works");
-});
+router.put("/api/books/:id", BookController.update);
 
 export default router;
