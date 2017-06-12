@@ -5,8 +5,13 @@ import Book from "../models/Book";
 
 const BookController = {
   list: (req, res, next) => {
-    console.log("List view is working");
-    return res.json("Works");
+    Book.find().exec()
+      .then(result => {
+        res.json(result);
+      })
+      .catch(err => {
+        next(err);
+      });
   },
   show: (req, res, next) => {
     console.log("Detail view is working");
