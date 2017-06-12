@@ -39,9 +39,9 @@ nextApp.prepare().then(() => {
 
   // Error handler middlewares
   // eslint-disable-next-line
-  app.use("*", (error, request, response, nextCallback) => {
+  app.use("*", (errors, request, response, nextCallback) => {
     return response.status(500).json({
-      message: error.message
+      message: errors.message
     });
   });
 
