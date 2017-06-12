@@ -14,8 +14,13 @@ const BookController = {
       });
   },
   show: (req, res, next) => {
-    console.log("Detail view is working");
-    return res.json("Works");
+    Book.findById(req.params.id).exec()
+      .then(item => {
+        res.json(item);
+      })
+      .catch(err => {
+        next(err);
+      });
   },
   create: (req, res, next) => {
     const book = new Book(req.body);
