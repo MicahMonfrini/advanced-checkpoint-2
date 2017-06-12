@@ -1,8 +1,5 @@
 import Book from "../models/Book";
 
-// @FIXME: remove disabling of rules
-/* eslint-disable no-unused-vars */
-
 const BookController = {
   list: (req, res, next) => {
     Book.find().exec()
