@@ -34,8 +34,13 @@ const BookController = {
       });
   },
   delete: (req, res, next) => {
-    console.log("Delete view is working");
-    return res.json("Works");
+    Book.findByIdAndRemove(req.params.id).exec()
+      .then(item => {
+        res.json(item);
+      })
+      .catch(err => {
+        next(err);
+      });
   },
   update: (req, res, next) => {
     console.log("Update view is working");
