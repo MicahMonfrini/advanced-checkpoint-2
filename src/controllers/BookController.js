@@ -1,3 +1,5 @@
+// import Book from "../models/Book";
+
 // @FIXME: remove disabling of rules
 /* eslint-disable no-unused-vars */
 
@@ -11,8 +13,7 @@ const BookController = {
     return res.json("Works");
   },
   create: (req, res, next) => {
-    console.log("Post view is working");
-    return res.json("Works");
+    return res.json();
   },
   delete: (req, res, next) => {
     console.log("Delete view is working");

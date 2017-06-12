@@ -2,6 +2,7 @@ import next from "next";
 import path from "path";
 import express from "express";
 import mongoose from "mongoose";
+import bodyParser from "body-parser";
 import BookRouter from "./routers/BookRouter";
 
 mongoose.connect("mongodb://localhost/checkpoint2");
@@ -22,6 +23,9 @@ const PORT = 3001;
 
 nextApp.prepare().then(() => {
   const app = express();
+
+  // init middlewares
+  app.use(bodyParser.json());
 
   // Define all you backend handlers here...
   app.use(BookRouter);
