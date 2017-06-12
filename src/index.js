@@ -1,7 +1,15 @@
 import next from "next";
 import path from "path";
 import express from "express";
+import mongoose from "mongoose";
 import BookRouter from "./routers/BookRouter";
+
+mongoose.connect("mongodb://localhost/checkpoint2");
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error:"));
+db.once("open", () => {
+  console.log("MongoDB connection successful");
+});
 
 const dev = process.env.NODE_ENV !== "production";
 const nextApp = next({
