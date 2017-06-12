@@ -12,8 +12,8 @@ const bookSchema = mongoose.Schema({
     required: true
   },
   date: {
-    type: Number,
-    max: [ 100, "Maximum character limit reached. Please try again." ],
+    type: String,
+    maxlength: [ 50, "Maximum character limit reached. Please try again." ],
     required: true
   },
   publisher: {
