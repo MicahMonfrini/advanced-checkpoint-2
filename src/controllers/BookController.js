@@ -43,8 +43,25 @@ const BookController = {
       });
   },
   update: (req, res, next) => {
-    console.log("Update view is working");
-    return res.json("Works");
+    Book.findById(req.params.id).exec()
+      .then(item => {
+        item.title = req.body.title || item.title;
+        item.author = req.body.author || item.author;
+        item.date = req.body.date || item.date;
+        item.publisher = req.body.publisher || item.publisher;
+        item.category = req.body.category || item.category;
+
+        item.save()
+          .then(updatedItem => {
+            return res.json(updatedItem);
+          })
+          .catch(err => {
+            next(err);
+          });
+      })
+      .catch(err => {
+        next(err);
+      });
   }
 };
 
