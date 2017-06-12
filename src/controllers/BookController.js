@@ -1,4 +1,4 @@
-// import Book from "../models/Book";
+import Book from "../models/Book";
 
 // @FIXME: remove disabling of rules
 /* eslint-disable no-unused-vars */
@@ -13,6 +13,16 @@ const BookController = {
     return res.json("Works");
   },
   create: (req, res, next) => {
+    const book = new Book(req.body);
+
+    book.save()
+      .then(savedBook => {
+        return res.json(savedBook);
+      })
+      .catch(err => {
+        next(err);
+      });
+    
     return res.json();
   },
   delete: (req, res, next) => {
