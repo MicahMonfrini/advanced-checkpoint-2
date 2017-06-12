@@ -22,8 +22,6 @@ const BookController = {
       .catch(err => {
         next(err);
       });
-    
-    return res.json();
   },
   delete: (req, res, next) => {
     console.log("Delete view is working");

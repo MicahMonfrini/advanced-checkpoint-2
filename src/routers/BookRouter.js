@@ -7,7 +7,7 @@ router.get("/api/books", BookController.list);
 
 router.get("/api/books/:id", BookController.show);
 
-router.post("/api/books/:id", BookController.create);
+router.post("/api/books", BookController.create);
 
 router.delete("/api/books/:id", BookController.delete);
 
