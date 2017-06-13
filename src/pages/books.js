@@ -3,14 +3,6 @@ import PropTypes from "prop-types";
 import Link from "next/link";
 
 class BooksPage extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  componentDidMount() {
-    // added this so next.js wouldn't throw "getInitialProps" error
-  }
-
   render() {
     // test array for map function
     const books = [
