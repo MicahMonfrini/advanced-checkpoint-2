@@ -1,6 +1,21 @@
 import React, {Component} from "react";
 
 class SubmitPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      titleText: "",
+      authorText: "",
+      dateText: "",
+      publisherText: "",
+      categoryText: ""
+    };
+  }
+
+  componentDidMount() {
+    // added this so next.js wouldn't throw "getInitialProps" error
+  }
+
   mapDispatchToProps() {
     // @TODO: create/import createBook action
     return {
