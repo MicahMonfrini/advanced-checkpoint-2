@@ -16,10 +16,10 @@ class SubmitPage extends Component {
     // added this so next.js wouldn't throw "getInitialProps" error
   }
 
-  mapDispatchToProps() {
+  mapDispatchToProps(dispatch) {
     // @TODO: create/import createBook action
     return {
-      createBook: dispatch => {
+      createBook: book => {
         dispatch(createBook(book));
       }
     };
@@ -29,7 +29,8 @@ class SubmitPage extends Component {
     return (
       <div>
         <form
-          onSubmit = {() => {
+          onSubmit = {event => {
+            event.preventDefault()
             this.props.createBook();
           }}>
           <p>
