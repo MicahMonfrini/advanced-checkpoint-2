@@ -25,8 +25,8 @@
     * Use a prop that has the array of your models
     * Use a parameter from the route path ?id=<id> to find the model to show (See Routing section for more details)
     * Use whatever html you want to show all of the properties of your thing
-* Loading data
-    * Trigger the loading of data inside componentDidMount of the pages, call loadThings
+<!-- * Loading data
+    * Trigger the loading of data inside componentDidMount of the pages, call loadThings -->
 
 ### Routing
 * For the basic routes without variables you can just use the next.js routes that are automatically generated.
