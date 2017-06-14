@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import Books from "../components/Books";
+import { loadBooks } from "../actions";
 
 function mapStateToProps(state) {
   return {
@@ -7,4 +8,14 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(Books);
+function mapDispatchToProps(dispatch) {
+  return {
+    loadBooks: () => {
+      dispatch(loadBooks());
+    }
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps)(Books);

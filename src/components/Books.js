@@ -6,6 +6,11 @@ class Books extends Component {
   constructor(props) {
     super(props);
   }
+
+  componentDidMount() {
+    this.props.loadBooks();
+  }
+
   render() {
     // map over books array. will pass to component via props
     const bookList = this.props.books.map((book, index) => {
@@ -35,7 +40,8 @@ class Books extends Component {
 }
 
 Books.propTypes = {
-  books: PropTypes.array.isRequired
+  books: PropTypes.array.isRequired,
+  loadBooks: PropTypes.func.isRequired
 };
 
 export default Books;
