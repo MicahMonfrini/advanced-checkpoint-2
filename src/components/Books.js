@@ -1,8 +1,6 @@
 import React, {Component} from "react";
-import PropTypes from "prop-types";
-import Link from "next/link";
 
-class BooksPage extends Component {
+class Books extends Component {
   render() {
     // test array for map function
     const books = [
@@ -43,10 +41,3 @@ class BooksPage extends Component {
     );
   }
 }
-
-// prop types
-BooksPage.propTypes = {
-  books: PropTypes.array.isRequired
-};
-
-export default BooksPage;
