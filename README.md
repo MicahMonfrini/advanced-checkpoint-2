@@ -36,9 +36,9 @@
     * First create a minimum working example to setup redux within next.js, refer to example in next.js repository or last lessons video screencast
     * The only state you need is an array of your models
         * state.js
-    * Create actions for loading your models and models loaded
+    <!-- * Create actions for loading your models and models loaded
         * loadThings() - do a fetch get to "/things"
-        * thingsLoaded(things) - THINGS_LOADED
+        * thingsLoaded(things) - THINGS_LOADED -->
     * Create an action for saving a new model
         * createThing(thing) - do a fetch post to "/things"
         * when the fetch is complete, dispatch to loadThings

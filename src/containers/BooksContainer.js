@@ -16,6 +16,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps)(Books);
+export default connect(mapStateToProps, mapDispatchToProps)(Books);
