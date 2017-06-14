@@ -1,22 +1,14 @@
 import React, {Component} from "react";
+import Link from "next/link";
+import PropTypes from "prop-types";
 
 class Books extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
-    // test array for map function
-    const books = [
-      {
-        title: "Sweet Book",
-        author: "Dude Duderson",
-        category: "Non-fiction"
-      },
-      {
-        title: "Sweet Book",
-        author: "Dude Duderson",
-        category: "Non-fiction"
-      }
-    ];
     // map over books array. will pass to component via props
-    const bookList = books.map((book, index) => {
+    const bookList = this.props.books.map((book, index) => {
       return (
         <ul key={index}>
           <li><strong>Title:</strong> {book.title}</li>
@@ -41,3 +33,9 @@ class Books extends Component {
     );
   }
 }
+
+Books.propTypes = {
+  books: PropTypes.array.isRequired
+};
+
+export default Books;

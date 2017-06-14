@@ -8,8 +8,6 @@ function books(state = [], action) {
   return state;
 }
 
-const rootReducer = combineReducers({
+export const reducers = combineReducers({
   books
 });
-
-export default rootReducer;

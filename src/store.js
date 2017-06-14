@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunkMiddleware from "redux-thunk";
-import { rootReducer } from "./reducers";
+import { reducers } from "./reducers";
 
 const initialState = {
   books: []
@@ -9,7 +9,7 @@ const initialState = {
 
 export const initStore = () => {
   return createStore(
-    rootReducer,
+    reducers,
     initialState,
     composeWithDevTools(applyMiddleware(thunkMiddleware)));
 };
