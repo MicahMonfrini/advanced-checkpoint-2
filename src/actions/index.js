@@ -1,3 +1,5 @@
+const BOOKS_LOADED = "BOOKS_LOADED";
+
 export function loadBooks() {
   return function (dispatch) {
     fetch("/api/books")
@@ -10,7 +12,7 @@ export function loadBooks() {
 }
 function booksLoaded(books) {
   return {
-    type: "BOOKS_LOADED",
+    type: BOOKS_LOADED,
     value: books
   };
 }
