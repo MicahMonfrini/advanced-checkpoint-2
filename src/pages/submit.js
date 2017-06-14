@@ -3,6 +3,7 @@ import React, {Component} from "react";
 class SubmitPage extends Component {
   constructor(props) {
     super(props);
+    
     this.state = {
       titleText: "",
       authorText: "",
