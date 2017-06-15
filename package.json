@@ -7,9 +7,10 @@
   "license": "MIT",
   "scripts": {
     "dev": "babel-node src/index",
-    "build": "next build",
+    "build": "next build src",
     "start": "babel-node src/index",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "postinstall": "npm run build"
   },
   "dependencies": {
     "body-parser": "^1.17.2",
