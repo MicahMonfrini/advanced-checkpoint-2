@@ -21,7 +21,7 @@ const nextApp = next({
 });
 const handle = nextApp.getRequestHandler();
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 nextApp.prepare().then(() => {
   const app = express();
