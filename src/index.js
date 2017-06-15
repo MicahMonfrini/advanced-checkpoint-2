@@ -9,7 +9,7 @@ import BookRouter from "./routers/BookRouter";
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost/checkpoint2");
 const db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error:"));
+db.on("error", console.error.bind(console, "connection error: "));
 db.once("open", () => {
   console.log("MongoDB connection successful");
 });
