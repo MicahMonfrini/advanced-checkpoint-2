@@ -8,7 +8,7 @@ const bookSchema = mongoose.Schema({
   },
   author: {
     type: String,
-    maxlength: [ 50, "Maximum character limit reached. Please try again." ],
+    maxlength: [ 200, "Maximum character limit reached. Please try again." ],
     required: true
   },
   date: {
@@ -18,7 +18,7 @@ const bookSchema = mongoose.Schema({
   },
   publisher: {
     type: String,
-    maxlength: [ 128, "Maximum character limit reached. Please try again." ],
+    maxlength: [ 200, "Maximum character limit reached. Please try again." ],
     required: true
   },
   category: {

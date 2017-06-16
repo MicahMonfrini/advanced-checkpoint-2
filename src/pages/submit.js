@@ -7,7 +7,6 @@ import withRedux from "next-redux-wrapper";
 class SubmitPage extends Component {
   constructor(props) {
     super(props);
-    console.log(props)
     this.state = {
       title: "",
       author: "",
