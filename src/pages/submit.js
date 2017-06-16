@@ -1,28 +1,19 @@
 import React, {Component} from "react";
+import { initStore } from "../store";
+import { createBook } from "../actions";
+import Link from "next/link";
+import withRedux from "next-redux-wrapper";
 
 class SubmitPage extends Component {
   constructor(props) {
     super(props);
-    
+    console.log(props)
     this.state = {
-      titleText: "",
-      authorText: "",
-      dateText: "",
-      publisherText: "",
-      categoryText: ""
-    };
-  }
-
-  componentDidMount() {
-    // added this so next.js wouldn't throw "getInitialProps" error
-  }
-
-  mapDispatchToProps(dispatch) {
-    // @TODO: create/import createBook action
-    return {
-      createBook: book => {
-        dispatch(createBook(book));
-      }
+      title: "",
+      author: "",
+      date: "",
+      publisher: "",
+      category: ""
     };
   }
 
@@ -31,18 +22,18 @@ class SubmitPage extends Component {
       <div>
         <form
           onSubmit = {event => {
-            event.preventDefault()
-            this.props.createBook();
+            event.preventDefault();
+            this.props.createBook({ ...this.state });
           }}>
           <p>
             Title:
               <input
                 type="text"
                 name="title"
-                value={this.state.titleText}
+                value={this.state.title}
                 onChange={ event => {
                   this.setState({
-                    titleText: event.target.value
+                    title: event.target.value
                   });
                 }}
               />
@@ -52,10 +43,10 @@ class SubmitPage extends Component {
               <input
                 type="text"
                 name="author"
-                value={this.state.authorText}
+                value={this.state.author}
                 onChange={ event => {
                   this.setState({
-                    authorText: event.target.value
+                    author: event.target.value
                   });
                 }}
               />
@@ -65,10 +56,10 @@ class SubmitPage extends Component {
               <input
                 type="text"
                 name="date"
-                value={this.state.dateText}
+                value={this.state.date}
                 onChange={ event => {
                   this.setState({
-                    dateText: event.target.value
+                    date: event.target.value
                   });
                 }}
               />
@@ -78,10 +69,10 @@ class SubmitPage extends Component {
               <input
                 type="text"
                 name="publisher"
-                value={this.state.publisherText}
+                value={this.state.publisher}
                 onChange={ event => {
                   this.setState({
-                    publisherText: event.target.value
+                    publisher: event.target.value
                   });
                 }}
               />
@@ -91,19 +82,30 @@ class SubmitPage extends Component {
               <input
                 type="text"
                 name="category"
-                value={this.state.categoryText}
+                value={this.state.category}
                 onChange={ event => {
                   this.setState({
-                    categoryText: event.target.value
+                    category: event.target.value
                   });
                 }}
               />
           </p>
            <input type="submit" />
         </form>
+        <Link href="/books">
+          <a>Back to books</a>
+        </Link>
       </div>
     );
   }
 }
 
-export default SubmitPage;
+const mapDispatchToProps = dispatch => {
+  return {
+    createBook: book => {
+      dispatch(createBook(book));
+    }
+  };
+};
+
+export default withRedux(initStore, null, mapDispatchToProps)(SubmitPage);
