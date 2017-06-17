@@ -5,7 +5,6 @@ import PropTypes from "prop-types";
 class Books extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
   }
 
   render() {
@@ -21,7 +20,9 @@ class Books extends Component {
             <a>More info</a>
           </Link>
           <br />
-          <button>Delete</button>
+          <button onClick={() => {
+            this.props.deleteBook(book._id);
+          }}>Delete</button>
         </ul>
       );
     });
