@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import { deleteBook } from "../actions";
 import Books from "../components/Books";
 
 function mapStateToProps(state) {
@@ -7,4 +8,12 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, null)(Books);
+function mapDispatchToProps(dispatch) {
+  return {
+    deleteBook: book => {
+      dispatch(deleteBook(book));
+    }
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Books);

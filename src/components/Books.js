@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 class Books extends Component {
   constructor(props) {
     super(props);
+    console.log(props);
   }
 
   render() {
