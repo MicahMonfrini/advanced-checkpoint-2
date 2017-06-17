@@ -1,4 +1,5 @@
 export const BOOKS_LOADED = "BOOKS_LOADED";
+export const BOOK_DELETED = "BOOK_DELETED";
 
 export function loadBooks() {
   return function (dispatch) {
@@ -26,5 +27,22 @@ export function createBook(book) {
       body: JSON.stringify(book)
     })
       .then(() => dispatch(loadBooks()));
+  };
+}
+
+export function deleteBook(id) {
+  return function (dispatch) {
+    fetch("/api/books/" + id, {
+      method: "DELETE",
+      headers: {"Content-Type": "application/json"},
+    })
+      .then(() => dispatch(bookDeleted()))
+      .then(() => dispatch(loadBooks()));
+  };
+}
+function bookDeleted(book) {
+  return {
+    type: BOOK_DELETED,
+    value: book
   };
 }
