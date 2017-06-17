@@ -12,7 +12,7 @@ class SubmitPage extends Component {
       author: "",
       date: "",
       publisher: "",
-      category: ""
+      category: "",
     };
   }
 
@@ -23,6 +23,13 @@ class SubmitPage extends Component {
           onSubmit = {event => {
             event.preventDefault();
             this.props.createBook({ ...this.state });
+            this.setState({
+              title: "",
+              author: "",
+              date: "",
+              publisher: "",
+              category: ""
+            })
           }}>
           <p>
             Title:

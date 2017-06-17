@@ -42,9 +42,9 @@
     <!-- * Create an action for saving a new model
         * createThing(thing) - do a fetch post to "/things"
         * when the fetch is complete, dispatch to loadThings -->
-    * Create an action for deleting an item
+    <!-- * Create an action for deleting an item
         * deleteThing(id) - do a fetch delete to "/things/" + id
-        * when the fetch is complete, dispatch to loadThings
+        * when the fetch is complete, dispatch to loadThings -->
     <!-- * Create reducer for the state
         * care about the action THINGS_LOADED -->
     * To connect your components to redux, use the withRedux decorator as described in the redux example in next.js repository. If you need to create Containers in components further down in your component tree, create containers as usual.
