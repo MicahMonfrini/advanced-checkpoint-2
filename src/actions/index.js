@@ -1,5 +1,6 @@
 export const BOOKS_LOADED = "BOOKS_LOADED";
 export const BOOK_DELETED = "BOOK_DELETED";
+export const GET_BOOK_DONE = "GET_BOOK_DONE";
 
 export function loadBooks() {
   return function (dispatch) {
@@ -43,6 +44,27 @@ export function deleteBook(id) {
 function bookDeleted(book) {
   return {
     type: BOOK_DELETED,
+    value: book
+  };
+}
+
+export function getBook(title) {
+  return function (dispatch) {
+    fetch("/api/books/" + title)
+      .then(response => {
+        return response.json();
+      })
+      .then(book => {
+        dispatch(getBookDone(book));
+      })
+      .catch(err => {
+        return console.log(err);
+      });
+  };
+}
+function getBookDone(book) {
+  return {
+    type: GET_BOOK_DONE,
     value: book
   };
 }
