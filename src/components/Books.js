@@ -16,7 +16,12 @@ class Books extends Component {
           <li><strong>Author:</strong> {book.author}</li>
           <li><strong>Category:</strong> {book.category}</li>
           {/* @TODO: configure url to generate unique title for detail page */}
-          <Link href={"/bookdetail"}>
+          <Link href={{
+            pathname: "bookdetail",
+            query: {
+              title: book.title
+            }
+          }}>
             <a>More info</a>
           </Link>
           <br />
