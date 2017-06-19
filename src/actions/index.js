@@ -48,9 +48,9 @@ function bookDeleted(book) {
   };
 }
 
-export function getBook(title) {
+export function getBook(id) {
   return function (dispatch) {
-    fetch("/api/books/" + title)
+    fetch("/api/books/" + id)
       .then(response => {
         return response.json();
       })
