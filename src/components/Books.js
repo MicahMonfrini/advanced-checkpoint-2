@@ -19,7 +19,7 @@ class Books extends Component {
           <Link href={{
             pathname: "bookdetail",
             query: {
-              title: book.title
+              id: book._id
             }
           }}>
             <a>More info</a>

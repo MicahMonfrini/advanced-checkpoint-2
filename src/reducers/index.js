@@ -1,5 +1,5 @@
 import {combineReducers} from "redux";
-import {BOOKS_LOADED} from "../actions";
+import {BOOKS_LOADED, GET_BOOK_DONE} from "../actions";
 
 function books(state = [], action) {
   switch (action.type) {
@@ -10,6 +10,16 @@ function books(state = [], action) {
   }
 }
 
+function book(state = {}, action) {
+  switch (action.type) {
+    case GET_BOOK_DONE:
+      return action.value;
+    default:
+      return state;
+  }
+}
+
 export const reducers = combineReducers({
-  books
+  books,
+  book
 });
