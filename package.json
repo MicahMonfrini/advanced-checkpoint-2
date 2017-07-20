@@ -9,6 +9,7 @@
     "dev": "babel-node src/index",
     "build": "next build src",
     "start": "babel-node src/index",
+    "start-production": "NODE_ENV=production babel-node src/index",
     "lint": "eslint src",
     "postinstall": "npm run build"
   },
